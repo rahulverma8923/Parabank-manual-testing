@@ -1,26 +1,174 @@
-# Project: Core Banking Web Application Manual Testing
-**Target Website:** [ParaBank by Parasoft](https://parabank.parasoft.com)  
-**Tester:** Rahul Verma  
+# 🏦 ParaBank Manual Testing Project
 
-## 📌 Project Overview
-This repository contains the end-to-end manual testing artifacts for **ParaBank**, a mock core banking application. The project focuses heavily on data integrity, transaction workflows, account ledger calculations, validation constraints, and discovering critical business logic failures.
+![Manual Testing](https://img.shields.io/badge/Testing-Manual%20Testing-blue)
+![Status](https://img.shields.io/badge/Project-Completed-success)
+![Domain](https://img.shields.io/badge/Domain-Banking-important)
+![QA](https://img.shields.io/badge/QA-Documentation-brightgreen)
 
-## 📁 Repository Contents
-* **ParaBank Test Plan.docx**: Outlines the strategic approach, testing types (Functional, Security, Negative, Data Integrity), entry/exit criteria, and scope.
-* **ParaBank Test Cases, Test Scenarios and Bug Report.xlsx**: 
-  * **Test Scenarios**: 14 high-level scenarios covering critical modules like Funds Transfer, Bill Pay, and Loan Request.
-  * **Test Cases**: 21 exhaustive test cases mapped with actual execution results and Pass/Fail statuses.
-  * **Bug Report**: Detailed logs of 6 highly critical business logic defects discovered during execution.
+---
 
-## 🛠️ Testing Types Performed
-* **Functional Testing:** Core banking operations (Account opening, statement retrieval).
-* **Data Integrity & Ledger Testing:** Verifying if account balances update accurately after debits and credits.
-* **Negative & Boundary Value Testing:** Inputting non-numeric values, zero amounts, and testing overdraft constraints.
-* **Security & Session Testing:** Validating authorization and checking direct URL access after logout.
+# 📌 Project Overview
 
-## 🐛 Key Defects Identified (Sample from Bug Log)
-During execution, multiple high-severity logical flaws were caught that break standard banking regulations:
-1. **BUG_01 (Overdraft Enforcement Failure):** 'Transfer Funds' allows processing amounts greater than the available account balance without blocking or throwing an overdraft warning.
-2. **BUG_02 (Unhandled Exception):** Inputting alphabetical characters in the 'Amount' field results in a raw backend crash (`500 Internal Error`) instead of a user-friendly validation message.
-3. **BUG_04 & BUG_05 (Negative Bill Pay Vulnerability):** The 'Bill Pay' module accepts negative numbers (e.g., -$20), which anomalously *increases* the sender's account balance instead of deducting it.
-4. **BUG_06 (Automated Loan Approval Bypass):** 'Request Loan' approves high-value loans even when a user inputs a `$0` down payment, bypassing basic credit validation.
+This repository contains a complete **Manual Testing Project** performed on the **ParaBank Online Banking Application**.
+
+The project demonstrates a structured Software Testing Life Cycle (STLC) by covering test planning, scenario creation, test case execution, defect reporting, and QA documentation for critical banking workflows.
+
+---
+
+# 🌐 Application Details
+
+| Property | Details |
+|----------|---------|
+| Application | ParaBank |
+| Website | https://parabank.parasoft.com |
+| Domain | Banking |
+| Testing Type | Manual Testing |
+| Tester | Rahul Verma |
+
+---
+
+# 🎯 Project Objectives
+
+- Validate core banking functionalities
+- Verify business-critical financial transactions
+- Identify functional and validation defects
+- Ensure data integrity across banking workflows
+- Prepare complete QA documentation following industry practices
+
+---
+
+# 🏦 Modules Tested
+
+- 👤 User Registration
+- 🔐 Login
+- 💼 Account Overview
+- 🆕 Open New Account
+- 💸 Transfer Funds
+- 🧾 Bill Pay
+- 💰 Request Loan
+
+---
+
+# 🧪 Testing Types Performed
+
+- ✅ Functional Testing
+- ✅ Security & Authorization Testing
+- ✅ Negative Testing
+- ✅ Boundary Value Testing
+- ✅ UI Testing
+- ✅ Data Integrity Testing
+
+---
+
+# 📊 Testing Summary
+
+| Item | Count |
+|------|------:|
+| Test Scenarios | 14 |
+| Test Cases | 21 |
+| Bugs Reported | 6 |
+| Modules Covered | 7 |
+
+---
+
+# 🐞 Defects Identified
+
+The testing process identified several important issues, including:
+
+- Negative account balances allowed after fund transfers.
+- Invalid alphabetic input accepted in amount fields.
+- Zero and negative amount transfers processed successfully.
+- Bill Pay accepts invalid phone numbers, ZIP codes, and negative payment amounts.
+- Negative bill payment increases the sender's account balance instead of decreasing it.
+- Loan requests approved even with zero down payment.
+
+---
+
+# 📁 Repository Structure
+
+```
+ParaBank-Manual-Testing
+│
+├── Test_Plan.docx
+├── Test_Scenarios.xlsx
+├── Test_Cases.xlsx
+├── Bug_Report.xlsx
+└── README.md
+```
+
+---
+
+# 📄 Documents Included
+
+## 📘 Test Plan
+- Scope of Testing
+- Testing Objectives
+- Entry & Exit Criteria
+- Testing Environment
+- Defect Classification
+- QA Deliverables
+
+## 📗 Test Scenarios
+High-level scenarios covering critical banking operations.
+
+## 📙 Test Cases
+Detailed positive, negative, and boundary test cases with execution results.
+
+## 📕 Bug Report
+Defects documented with:
+- Bug ID
+- Severity
+- Priority
+- Steps to Reproduce
+- Description
+
+---
+
+# 🛠️ Tools Used
+
+- Microsoft Excel
+- Microsoft Word
+- Google Chrome
+- Windows 11
+
+---
+
+# 💡 Skills Demonstrated
+
+- Manual Testing
+- Banking Domain Testing
+- Software Testing Life Cycle (STLC)
+- Functional Testing
+- Security Testing
+- Boundary Value Analysis
+- Negative Testing
+- UI Validation
+- Data Integrity Testing
+- Test Planning
+- Test Scenario Design
+- Test Case Writing
+- Bug Reporting
+- Defect Documentation
+
+---
+
+# 🚀 How to Use
+
+1. Review the Test Plan to understand the testing strategy.
+2. Execute the Test Scenarios.
+3. Follow the Test Cases for validation.
+4. Review the Bug Report to understand the identified defects.
+
+---
+
+# 👨‍💻 Author
+
+**Rahul Verma**
+
+B.Tech (Computer Science & Engineering)
+
+Aspiring Software Test Engineer | Manual Testing | Automation Testing (Python)
+
+---
+
+⭐ If you found this repository useful, consider giving it a star.
